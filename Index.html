@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>[Hangout city] – Coming Oct 30</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: "Poppins", sans-serif;
+      background: linear-gradient(135deg, #1e1e2f, #2c2c54);
+      color: #fff;
+      text-align: center;
+      overflow-x: hidden;
+    }
+
+    header {
+      padding: 100px 20px 50px;
+    }
+
+    h1 {
+      font-size: 3rem;
+      margin: 0;
+      color: #ffb347;
+      text-shadow: 0 0 20px rgba(255, 179, 71, 0.7);
+      transition: transform 0.3s ease;
+    }
+
+    h1:hover {
+      transform: scale(1.05);
+    }
+
+    h2 {
+      font-weight: 400;
+      margin-top: 10px;
+      color: #ffd194;
+    }
+
+    #countdown {
+      font-size: 1.5rem;
+      margin-top: 30px;
+      font-weight: bold;
+      color: #ff7675;
+      text-shadow: 0 0 10px rgba(255, 118, 117, 0.7);
+    }
+
+    section {
+      padding: 80px 20px;
+      max-width: 800px;
+      margin: auto;
+    }
+
+    section h3 {
+      font-size: 2rem;
+      margin-bottom: 20px;
+      color: #74b9ff;
+      text-shadow: 0 0 10px rgba(116, 185, 255, 0.7);
+    }
+
+    section p {
+      line-height: 1.6;
+      color: #dfe6e9;
+      font-size: 1.1rem;
+    }
+
+    footer {
+      padding: 30px;
+      font-size: 0.9rem;
+      color: #888;
+    }
+
+    section:hover {
+      background: rgba(255, 255, 255, 0.05);
+      border-radius: 12px;
+      transition: background 0.3s ease;
+    }
+
+    .links {
+      margin-top: 40px;
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+    }
+
+    .link-btn {
+      padding: 15px 30px;
+      border-radius: 30px;
+      font-size: 1rem;
+      border: none;
+      cursor: pointer;
+      font-weight: bold;
+      transition: all 0.3s ease;
+    }
+
+    .discord {
+      background: #5865f2;
+      color: #fff;
+      box-shadow: 0 0 15px rgba(88, 101, 242, 0.6);
+    }
+
+    .discord:hover {
+      transform: scale(1.08);
+      box-shadow: 0 0 25px rgba(88, 101, 242, 0.9);
+    }
+
+    .roblox {
+      background: #e74c3c;
+      color: #fff;
+      box-shadow: 0 0 15px rgba(231, 76, 60, 0.6);
+    }
+
+    .roblox:hover {
+      transform: scale(1.08);
+      box-shadow: 0 0 25px rgba(231, 76, 60, 0.9);
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>[Hangout city]</h1>
+    <h2>Releasing October 30, 2025</h2>
+    <div id="countdown">Loading countdown...</div>
+  </header>
+
+  <section>
+    <h3>About</h3>
+    <p>
+      Hangout city is a game that's going to be available on October 30th of 2025, The game might be delayed if the game isn't polished well.
+    </p>
+
+    <div class="links">
+      <button class="link-btn discord" onclick="window.location.href='https://discord.gg/YOURCODE'">
+  Join Discord
+</button>
+
+      <button class="link-btn roblox" onclick="window.location.href='https://www.roblox.com/games/https://www.roblox.com/games/119976051264223/Hangout-city-Early-game#!/game-instances'">
+  View Roblox Page
+</button>
+
+    </div>
+  </section>
+
+  <footer>
+    &copy; 2025 [Hangout city by jonathanid7]. All rights reserved.
+  </footer>
+
+  <script>
+    const countdownEl = document.getElementById("countdown");
+    const releaseDate = new Date("October 30, 2025 00:00:00").getTime();
+
+    function updateCountdown() {
+      const now = new Date().getTime();
+      const diff = releaseDate - now;
+
+      if (diff <= 0) {
+        countdownEl.textContent = "The game is now released!";
+        return;
+      }
+
+      const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+
+      countdownEl.textContent = `${days}d ${hours}h ${minutes}m ${seconds}s`;
+    }
+
+    setInterval(updateCountdown, 1000);
+    updateCountdown();
+  </script>
+</body>
+</html>
